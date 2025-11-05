@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="suduko.css" />
+</head>
+<body>
+  <!-- nav bar starts -->
+      <header class="navbar">
+  <div class="logo"><img src="images/download (1).jpeg" class="mainlogo" alt="Logo"/>HireLens</div>
+
+  <nav class="nav-links">
+    <a href="#">Chess</a>
+    <a href="#">More Puzzles</a>
+    <a href="#">Algorithums used in Games</a>
+  </nav>
+  <button class="login-btn">Login</button>
+</header>
+    <!-- navbar ends -->
+
+
+    <h1>Sudoku Solver</h1>
+  <h1><b><u>Sudoku Solver (Backtracking Algorithm)</u></b></h1>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <video class="loading-video" autoplay loop muted playsinline>
+      <source src="images/Number Puzzle.mp4" type="video/mp4" />
+    </video>
+    <p>Solving Sudoku... Please wait</p>
+  </div>
+
+<!-- gif -->
+<div class="container">
+  <div class="left">
+    <video autoplay loop muted playsinline class="gif-like">
+      <source src="images/4B29Wp8T10e0HDeuaI.mp4" type="video/mp4" />
+    </video>
+  </div>
+<!-- gif ends -->
+  <div class="right glass-box">
+    <h2>Backtracking concept in Sudoku Solver</h2>
+    <p>Backtracking is a general algorithmic technique that incrementally builds candidates for a solution and abandons (“backtracks”) a candidate as soon as it determines that the candidate cannot possibly lead to a valid solution.
+
+In a Sudoku puzzle, the goal is to fill a 9×9 grid so that every row, column, and 3×3 subgrid contains the digits 1 to 9 exactly once. Backtracking systematically tries numbers in empty cells, checking at each step whether the placement keeps the Sudoku rules valid..</p>
+<br/>
+    <h2>Here’s how backtracking works in a Sudoku solver:</h2>
+    <ul class="points"> 
+      <li><b>Start with the given Sudoku grid.</b><br>
+Some cells are already filled; the rest are empty (represented as 0 or blank).</li>
+      <li>Find the first empty cell.</li>
+      <li>Try filling the cell with digits 1–9 one by one:
+        <ul>
+          <li>For each number, check whether it follows Sudoku rules:</li>
+          <li>The number is not already present in the same row.</li> 
+          <li>The number is not already present in the same column.</li> 
+         <li>The number is not already present in the same 3×3 subgrid.</li> 
+        </ul>
+      <li>If the number is valid, place it temporarily in the cell and move to the next empty cell (recursive step).</li>
+      <li>If no number fits, backtrack:</li>
+        <ul>
+          <li>Remove (reset) the last filled number.</li>
+          <li>Try the next possible number for the previous cell..</li>
+        </ul>
+      <li>Repeat this process until all cells are filled correctly or no valid configuration exists.</li>
+      <li>If the grid is completely filled, the Sudoku is solved</li>
+  </div>
+</div>
+  
+
+</div>
+
+<br/>
+<br/>
+
+ <h1>Sudoku Solver (Backtracking Algorithm)</h1>
+  
+  <table id="sudoku-grid"></table>
+  
+  <div class="buttons">
+    <button id="solveBtn">Solve</button>
+    <button id="clearBtn">Clear</button>
+  </div>
+
+<footer>
+  <p>&copy; 2024 Sudoku Solver. All rights reserved.</p>
+</footer>
+
+  <script src="suduko.js"></script>
+</body>
+</html>
+
